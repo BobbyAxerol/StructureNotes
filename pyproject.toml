@@ -1,0 +1,23 @@
+[project]
+name = "structured-notes"
+version = "0.1.0"
+description = "Capital-Protected Structured Note Backtester"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "scipy>=1.13",
+    "yfinance>=0.2",
+    "matplotlib>=3.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/structured_notes"]
+
+[project.scripts]
+run-backtest = "structured_notes.main:main"
